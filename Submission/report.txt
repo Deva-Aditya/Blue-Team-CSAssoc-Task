@@ -1,0 +1,17 @@
+1. EXECUTIVE SUMMARY
+The task gave the log of a website, which had malicious and normal requests, encrypted in the Vigenère cypher. So the log was decrypted, and each log is checked if they match specific conditions given in the pdf. Then, their IP addresses are pulled, and printed, along with the timestamp. So, in overall, the encrypted file, along with the key is passed as arguments (PS: Passing the key is not case sensitive.). Writing the code, we find that there were 3 types of attacks recognised- Brute Force, Structured Query Language injection (SQLi), and Directory Traversal. With Brute force, credentials of one or more targets are compromised, with SQLi, unauthenticated access to the website is being done, and with Directory traversal, unauthorised access to the admin files is happening. I would say, the overall severity of this incident is MEDIUM to HIGH, as these things are common to website. One thing which makes the incident high, is the IP address "141.98.10.33", as this is the IP address common to all the 3 types of attacks.
+
+2. ATTACK SUMMARY
+/*The csv file of this attack summary is attached in this directory*/
+
+3. RECOMMENDED ACTIONS
+These are my opinions, on how they could be prevented.
+
+a) Brute Force:
+This could be prevented, by limiting the number of attempts at a time to only 5 or less, with increasing time interval between each trial
+
+b) SQL injection:
+This could be prevented, by restricting the character " " (Blank Space) to either be entered in the input or be put as credentials, or converting the input into a string, and then comparing it in the database.
+
+c) Directory traversal:
+Similarly, I think this could be prevented by restricting characters ".", "/" or "\" to either be entered in the input or be put as credentials, or converting the input into a string, and then comparing it in the database.
